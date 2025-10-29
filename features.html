@@ -1,14 +1,84 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Product Features</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Features</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; color:#0f172a; }
+    header, footer { background:#f8fafc; border-bottom:1px solid #e5e7eb; }
+    .nav { max-width: 1000px; margin:0 auto; padding:12px 16px; display:flex; gap:12px; align-items:center; justify-content:space-between; }
+    .brand { font-weight:700; }
+    nav a { color:#0f172a; text-decoration:none; margin-left:10px; padding:6px 10px; border-radius:8px; }
+    nav a:hover, nav a.active { background:#e2e8f0; }
+    main { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+    h1 { margin: 0 0 8px; }
+    p.lead { color:#475569; margin: 0 0 20px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
+    .card { border:1px solid #e5e7eb; border-radius:12px; padding:12px; background:#fff; }
+    .card img { width:100%; height:auto; border-radius:8px; border:1px solid #e5e7eb; }
+    .card h3 { margin:10px 0 6px; font-size:1.05rem; }
+    .card p { margin:0; color:#475569; line-height:1.5; }
+    .cta { text-align:center; margin:28px 0 8px; }
+    .btn { display:inline-block; padding:10px 14px; background:#0f172a; color:#fff; text-decoration:none; border-radius:10px; }
+    footer { border-top:1px solid #e5e7eb; text-align:center; padding:14px 16px; color:#475569; }
+  </style>
 </head>
-
 <body>
-    <h1>Product Features</h1>
-    <p>This page presents the main features and benefits of the product.</p>
-</body>
+  <header>
+    <div class="nav">
+      <div class="brand">KineticPulse</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a class="active" href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="team.html">Team</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <h1>Product Features</h1>
+    <p class="lead">This page presents the main features and benefits of the product.</p>
+
+    <div class="grid">
+      <article class="card">
+        <img src="mockups/homepage.png" alt="Motion-powered charging mockup">
+        <h3>Motion-Powered Charging</h3>
+        <p>Convert everyday movement into energy so your phone stays topped up without outlets.</p>
+      </article>
+
+      <article class="card">
+        <img src="mockups/features.jpg" alt="Micro-translation mockup">
+        <h3>Micro-Translator</h3>
+        <p>Quick, phrase-level translations for smooth interactions on campus, travel, and daily life.</p>
+      </article>
+
+      <article class="card">
+        <img src="mockups/pricing.png" alt="Compact design mockup">
+        <h3>Compact & Durable</h3>
+        <p>Lightweight build made to handle workouts and commutes while staying comfortable.</p>
+      </article>
+
+      <article class="card">
+        <img src="mockups/team.jpg" alt="Seamless setup mockup">
+        <h3>Seamless Setup</h3>
+        <p>One-tap pairing and a clean interface so you spend less time configuring and more time using.</p>
+      </article>
+    </div>
+
+    <div class="cta">
+      <a class="btn" href="pricing.html">View Pricing</a>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> KineticPulse — All rights reserved
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
