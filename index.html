@@ -4,57 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KineticPulse — Features</title>
-  <!-- Background color #4d42b3 and all styling will be in features.css -->
   <link rel="stylesheet" href="features.css" />
 </head>
 <body>
-  <!-- Top bar -->
+  <!-- Header -->
   <header class="site-header">
-    <div class="nav">
-      <!-- Replace src with your logo file -->
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="KineticPulse logo" class="logo" />
-      </a>
+    <!-- Mets ton logo ici -->
+    <a class="logo" href="index.html" aria-label="KineticPulse home">
+      <!-- <img src="assets/logo.png" alt="KineticPulse logo"> -->
+    </a>
 
-      <nav aria-label="Primary">
-        <a href="features.html" class="active" aria-current="page">features</a>
-        <a href="pricing.html">prices</a>
-        <a href="team.html">About us</a>
-      </nav>
-    </div>
+    <nav class="main-nav" aria-label="Main">
+      <a class="nav-link active" href="index.html">features</a>
+      <a class="nav-link" href="pricing.html">prices</a>
+      <a class="nav-link" href="team.html">About us</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- Carousel section -->
-    <section id="carousel" class="carousel" aria-live="polite">
-      <!-- Left arrow -->
-      <button class="arrow left" aria-label="Previous product" data-dir="prev">
-        &#10094;
-      </button>
+  <!-- Stage -->
+  <main class="stage" aria-live="polite">
+    <!-- Arrows -->
+    <button class="arrow arrow-left" aria-label="Previous product" data-dir="prev">‹</button>
 
-      <!-- Product panel (white rounded rectangle where you will place photos) -->
-      <div class="product-panel" role="img" aria-label="Product image area">
-        <!-- You’ll set the real <img> from JS; this placeholder text is for layout only -->
-        <span class="placeholder">product photo</span>
-        <!-- When ready, JS will inject: <img src="your-photo.jpg" alt="Product photo"> -->
-      </div>
+    <!-- Product viewer -->
+    <section class="viewer" aria-labelledby="product-name">
+      <figure class="photo-frame" id="photo-frame">
+        <!-- Placeholder visible tant que l'image n'est pas chargée -->
+        <div class="placeholder">product photo</div>
+        <img id="product-image" src="" alt="Product photo" />
+        <figcaption class="sr-only">Current product image</figcaption>
+      </figure>
 
-      <!-- Product text -->
-      <h2 id="productName" class="product-name">product name</h2>
-      <p id="productDescription" class="product-description">product description</p>
-
-      <!-- Right arrow -->
-      <button class="arrow right" aria-label="Next product" data-dir="next">
-        &#10095;
-      </button>
+      <h1 id="product-name" class="product-name">product name</h1>
+      <p id="product-desc" class="product-desc">product description</p>
     </section>
+
+    <button class="arrow arrow-right" aria-label="Next product" data-dir="next">›</button>
   </main>
 
-  <footer class="site-footer">
-    <small>© <span id="year"></span> KineticPulse</small>
-  </footer>
+  <!-- Données produits (à éditer avec tes vraies images/noms/descriptions) -->
+  <ul id="product-data" hidden>
+    <li data-image="assets/product1.jpg"
+        data-name="Kinetic Band"
+        data-desc="Motion-powered charging with essential translation."></li>
 
-  <!-- Logic (bounce effect + carousel) will be in features.js -->
+    <li data-image="assets/product2.jpg"
+        data-name="Battery Band"
+        data-desc="Larger battery for longer sessions; quick pairing."></li>
+
+    <li data-image="assets/product3.jpg"
+        data-name="Translator Band"
+        data-desc="Fast phrase-level translation for daily situations."></li>
+  </ul>
+
   <script src="features.js" defer></script>
 </body>
 </html>
