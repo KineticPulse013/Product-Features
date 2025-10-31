@@ -1,15 +1,16 @@
-// --- Helpers -------------------------------------------------
-const $ = (sel, ctx=document) => ctx.querySelector(sel);
-const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+// Helpers
+const $  = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => Array.from(c.querySelectorAll(s));
 
-const viewer = $('.viewer');
-const imgEl  = $('#product-image');
-const nameEl = $('#product-name');
-const descEl = $('#product-desc');
+const viewer   = $('.viewer');
+const frame    = $('#photo-frame');
+const imgEl    = $('#product-image');
+const nameEl   = $('#product-name');
+const descEl   = $('#product-desc');
 const leftBtn  = $('.arrow-left');
 const rightBtn = $('.arrow-right');
 
-// Read product data from hidden <ul id="product-data">
+// Lire les données produits depuis <ul id="product-data">
 const items = $$('#product-data li').map(li => ({
   image: li.dataset.image || '',
   name : li.dataset.name  || 'Product name',
@@ -17,41 +18,42 @@ const items = $$('#product-data li').map(li => ({
 }));
 
 let i = 0;
+
 function show(index){
   if (!items.length) return;
   i = (index + items.length) % items.length;
 
-  // Bounce effect on the white rectangle
+  // Effet rebond
   viewer.classList.remove('bounce');
-  void viewer.offsetWidth; // reflow to restart animation
+  void viewer.offsetWidth;            // reflow pour redémarrer l’anim
   viewer.classList.add('bounce');
 
-  // Smooth image swap with preload
+  // Pré-charge et transition image
   const next = new Image();
   next.onload = () => {
     imgEl.src = next.src;
     imgEl.alt = items[i].name || 'Product photo';
+    frame.classList.add('loaded');    // masque le placeholder une fois chargée
     imgEl.classList.remove('ready');
-    requestAnimationFrame(() => {
-      // allow transition to apply
-      imgEl.classList.add('ready');
-    });
+    requestAnimationFrame(() => imgEl.classList.add('ready'));
   };
   next.src = items[i].image || '';
 
+  // Texte
   nameEl.textContent = items[i].name;
   descEl.textContent = items[i].desc;
 }
 
-// Controls
+// Contrôles
 leftBtn?.addEventListener('click',  () => show(i - 1));
 rightBtn?.addEventListener('click', () => show(i + 1));
 
-// Keyboard support
+// Clavier
 window.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft')  show(i - 1);
   if (e.key === 'ArrowRight') show(i + 1);
 });
 
-// Initialize
+// Initialisation
 show(0);
+
