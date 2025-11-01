@@ -10,7 +10,6 @@ const descEl   = $('#product-desc');
 const leftBtn  = $('.arrow-left');
 const rightBtn = $('.arrow-right');
 
-// Lire les données produits depuis <ul id="product-data">
 const items = $$('#product-data li').map(li => ({
   image: li.dataset.image || '',
   name : li.dataset.name  || 'Product name',
@@ -23,37 +22,32 @@ function show(index){
   if (!items.length) return;
   i = (index + items.length) % items.length;
 
-  // Effet rebond
+  // bounce
   viewer.classList.remove('bounce');
-  void viewer.offsetWidth;            // reflow pour redémarrer l’anim
+  void viewer.offsetWidth;
   viewer.classList.add('bounce');
 
-  // Pré-charge et transition image
+  // image preload + fade-in
   const next = new Image();
   next.onload = () => {
     imgEl.src = next.src;
     imgEl.alt = items[i].name || 'Product photo';
-    frame.classList.add('loaded');    // masque le placeholder une fois chargée
+    frame.classList.add('loaded');
     imgEl.classList.remove('ready');
     requestAnimationFrame(() => imgEl.classList.add('ready'));
   };
   next.src = items[i].image || '';
 
-  // Texte
   nameEl.textContent = items[i].name;
   descEl.textContent = items[i].desc;
 }
 
-// Contrôles
 leftBtn?.addEventListener('click',  () => show(i - 1));
 rightBtn?.addEventListener('click', () => show(i + 1));
-
-// Clavier
 window.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft')  show(i - 1);
   if (e.key === 'ArrowRight') show(i + 1);
 });
 
-// Initialisation
 show(0);
 
