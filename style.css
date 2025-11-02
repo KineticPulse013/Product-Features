@@ -39,12 +39,18 @@ body{
 /* Logo sans cercle ni fond */
 .logo{
   display:flex; align-items:center;
-  width:auto; height:48px;
+  width:auto; height:56px;        /* zone cliquable un peu plus grande */
   border:0; background:transparent;
 }
 .logo img{
   display:block;
-  height:40px; width:auto;
+  height:52px;                    /* ← taille réelle du logo (desktop) */
+  width:auto;
+}
+
+@media (max-width:860px){
+  .logo{ height:48px }
+  .logo img{ height:44px }        /* ← un peu plus petit sur mobile */
 }
 
 .main-nav{margin-left:auto;display:flex;gap:28px}
@@ -115,20 +121,27 @@ body{
 .photo-frame{
   position:relative;
   width:min(560px,86vw);
-  height:clamp(220px,40vw,340px);
+  height:clamp(220px, 32vw, 420px);   /* ↓ un peu moins haut et plus flexible */
   border-radius:22px;
   border:1px solid var(--panel-border);
-  background:#fff; /* fond neutre derrière la PNG transparente */
-  display:grid; place-items:center; overflow:hidden;
+  background:#fff;
+  display:grid; place-items:center;
+  overflow:hidden;
+  padding:16px;                       /* ← espace autour de l'image */
 }
-.placeholder{ color:#111; font-weight:700; opacity:.75 }
+
 .photo-frame img{
   display:block;
-  width:100%; height:100%;
-  object-fit:contain; background:transparent;
+  max-width:100%;
+  max-height:100%;
+  width:auto;                         /* ← évite l’étirement */
+  height:auto;                        /* ← évite l’étirement */
+  object-fit:contain;                 /* ← garantit que tout l’objet est visible */
+  background:transparent;
   opacity:0; transform:scale(.98);
   transition:opacity .35s ease, transform .35s ease;
 }
+
 .photo-frame.loaded .placeholder{ display:none }
 .photo-frame img.ready{ opacity:1; transform:scale(1) }
 
