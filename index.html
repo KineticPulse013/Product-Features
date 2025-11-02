@@ -3,97 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KineticPulse — Features</title>
-  <link rel="stylesheet" href="features.css" />
+  <title>KineticPulse — Features & Products</title>
+  <meta name="description" content="KineticPulse: motion-powered smartwatch with real-time translation, wireless charging and health features." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Top navigation (optional: keep consistent across pages) -->
-  <header class="site-header">
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" role="banner">
     <a class="logo" href="index.html" aria-label="KineticPulse home">
-      <!-- <img src="assets/logo.png" alt="KineticPulse logo" /> -->
+      <!-- Optionnel: <img src="assets/logo.png" alt="KineticPulse logo"> -->
     </a>
-    <nav class="main-nav" aria-label="Main">
-      <a class="nav-link active" href="features.html">features</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="index.html">features</a>
       <a class="nav-link" href="pricing.html">prices</a>
       <a class="nav-link" href="team.html">About us</a>
     </nav>
   </header>
 
-  <main>
-    <!-- SECTION A: Feature cards (purple background) -->
+  <main id="content">
+    <!-- ===================== TOP FEATURES ===================== -->
     <section class="section features-top" aria-labelledby="features-title">
       <h1 id="features-title" class="page-title">Features</h1>
 
-      <div class="cards">
-        <!-- Card 1: Translation -->
-        <article class="card">
-          <div class="icon">
-            <!-- simple inline SVG icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 4h9v6H4V4zm0 10h7v6H4v-6zm11-3h5v2h-5v-2zm0 5h7v2h-7v-2zM9 7h1v2H9V7z"/>
+      <div class="cards" role="list">
+        <!-- Traduction -->
+        <article class="card" role="listitem" aria-label="Real-time Translation">
+          <div class="icon" aria-hidden="true">
+            <!-- globe + bulles -->
+            <svg viewBox="0 0 24 24">
+              <path fill="#fff" d="M12 3a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm0 2a4 4 0 0 1 0 8c-.3 0-.6 0-.9-.1 1-1 1.9-2.4 2.4-3.9h1.5v-1h-1.2c.1-.6.2-1.2.2-1.9h-1c0 .6-.1 1.2-.2 1.9H9.9v1h2.3c-.4 1.1-1.1 2.2-2 3.1A4 4 0 0 1 12 5Z"/>
             </svg>
           </div>
           <h3>Real-time Translation</h3>
-          <p>Instant phrase-level translation on-device for natural conversations.</p>
+          <p>Understand and reply across languages directly from your wrist.</p>
         </article>
 
-        <!-- Card 2: Wireless charging -->
-        <article class="card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M11 21h2v-2h-2v2zM4.22 18.36l1.42-1.42C4.4 15.7 4 14.39 4 13c0-1.39.4-2.7 1.64-3.94L4.22 7.64A8.963 8.963 0 0 0 2 13c0 2.21.8 4.23 2.22 5.36zM18.36 19.78A8.963 8.963 0 0 0 22 13c0-2.21-.8-4.23-2.22-5.36l-1.42 1.42C19.6 10.3 20 11.61 20 13c0 1.39-.4 2.7-1.64 3.94l1.42 1.42zM13 3h-2v2h2V3zm6.78 2.22-1.42 1.42C19.6 8.3 20 9.61 20 11h2c0-2.21-.8-4.23-2.22-5.36zM6.64 4.22 5.22 5.64A8.963 8.963 0 0 0 2 11h2c0-1.39.4-2.7 1.64-3.94L6.64 4.22z"/>
+        <!-- Recharge sans fil -->
+        <article class="card" role="listitem" aria-label="Wireless Power Charging">
+          <div class="icon" aria-hidden="true">
+            <!-- éclair + ondes -->
+            <svg viewBox="0 0 24 24">
+              <path fill="#fff" d="M13 2 6 13h4l-1 9 7-11h-4l1-9z"/>
+              <path fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity=".85"
+                    d="M3.5 12A8.5 8.5 0 0 0 12 20.5M20.5 12A8.5 8.5 0 0 0 12 3.5"/>
             </svg>
           </div>
-          <h3>Wireless Phone Charging</h3>
-          <p>Motion-powered energy with Qi wireless output for quick top-ups.</p>
+          <h3>Wireless Power Charging</h3>
+          <p>Motion-powered energy with Qi output for quick phone top-ups.</p>
         </article>
 
-        <!-- Card 3: Smartwatch essentials -->
-        <article class="card">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15 3H9L7 6v12l2 3h6l2-3V6l-2-3zm-3 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+        <!-- Santé / Fitness -->
+        <article class="card" role="listitem" aria-label="Health & Fitness Monitoring">
+          <div class="icon" aria-hidden="true">
+            <!-- coeur -->
+            <svg viewBox="0 0 24 24">
+              <path fill="#fff" d="M12 21s-6.7-4.3-8.6-8.1C2 9.7 3.8 7 6.6 7c1.7 0 2.9.9 3.4 2 .5-1.1 1.7-2 3.4-2 2.8 0 4.6 2.7 3.2 5.9C18.7 16.7 12 21 12 21z"/>
             </svg>
           </div>
-          <h3>Smartwatch Essentials</h3>
-          <p>Notifications, health metrics, and fitness modes — all streamlined.</p>
+          <h3>Health & Wellness</h3>
+          <p>Track heart rate, sleep and activity with clear, privacy-first metrics.</p>
+        </article>
+
+        <!-- Notifications intelligentes -->
+        <article class="card" role="listitem" aria-label="Smart Notifications">
+          <div class="icon" aria-hidden="true">
+            <!-- cloche/étoile simple -->
+            <svg viewBox="0 0 24 24">
+              <path fill="#fff" d="M12 2l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17l-5.9 3 1.2-6.5L2.5 8.9 9 8l3-6z"/>
+            </svg>
+          </div>
+          <h3>Smart Notifications</h3>
+          <p>Weather, calls and alerts — only what matters, when it matters.</p>
         </article>
       </div>
     </section>
 
-    <!-- SECTION B: Product slider (white panel) -->
-    <section class="section viewer-wrap">
-      <!-- arrows -->
+    <!-- ===================== PRODUCT VIEWER (CAROUSEL) ===================== -->
+    <section class="section viewer-wrap" aria-label="Product gallery">
       <button class="arrow arrow-left" aria-label="Previous product" data-dir="prev">‹</button>
 
-      <div class="viewer">
-        <figure class="photo-frame" id="photo-frame">
-          <div class="placeholder">product photo</div>
-          <img id="product-image" src="" alt="Product photo" />
-        </figure>
-
-        <h2 id="product-name" class="product-name">Kinetic Band</h2>
-        <p id="product-desc" class="product-desc">
-          Motion-powered charging with essential translation.
-        </p>
-
-        <a class="btn" href="pricing.html">Try the Band</a>
-      </div>
-
-      <button class="arrow arrow-right" aria-label="Next product" data-dir="next">›</button>
-    </section>
-
-    <!-- (Optional) CTA below -->
-    <!-- <section class="section cta"><h2>Try the Band</h2></section> -->
-  </main>
-
-  <!-- Data for the slider (update with your images) -->
-  <ul id="product-data" hidden>
-    <li data-image="assets/watch-1.png" data-name="Kinetic Band" data-desc="Motion-powered charging with essential translation."></li>
-    <li data-image="assets/watch-2.png" data-name="Battery Band" data-desc="Bigger battery. Two phone top-ups."></li>
-    <li data-image="assets/watch-3.png" data-name="Translator Band" data-desc="Fast on-device translation in daily scenarios."></li>
-  </ul>
-
-  <script src="features.js" defer></script>
-</body>
-</html>
+      <div class="viewer" aria-live="pol
