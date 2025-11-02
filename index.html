@@ -11,7 +11,7 @@
   <!-- ===================== HEADER ===================== -->
   <header class="site-header" role="banner">
     <a class="logo" href="index.html" aria-label="KineticPulse home">
-      <!-- Optionnel: <img src="assets/logo.png" alt="KineticPulse logo"> -->
+      <img src="assets/logo.png" alt="KineticPulse logo">
     </a>
     <nav class="main-nav" aria-label="Main navigation">
       <a class="nav-link active" href="index.html">features</a>
@@ -21,15 +21,14 @@
   </header>
 
   <main id="content">
-    <!-- ===================== TOP FEATURES ===================== -->
+    <!-- ===================== TOP FEATURES (static, no arrows) ===================== -->
     <section class="section features-top" aria-labelledby="features-title">
       <h1 id="features-title" class="page-title">Features</h1>
 
       <div class="cards" role="list">
-        <!-- Traduction -->
+        <!-- Real-time Translation -->
         <article class="card" role="listitem" aria-label="Real-time Translation">
           <div class="icon" aria-hidden="true">
-            <!-- globe + bulles -->
             <svg viewBox="0 0 24 24">
               <path fill="#fff" d="M12 3a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm0 2a4 4 0 0 1 0 8c-.3 0-.6 0-.9-.1 1-1 1.9-2.4 2.4-3.9h1.5v-1h-1.2c.1-.6.2-1.2.2-1.9h-1c0 .6-.1 1.2-.2 1.9H9.9v1h2.3c-.4 1.1-1.1 2.2-2 3.1A4 4 0 0 1 12 5Z"/>
             </svg>
@@ -38,13 +37,12 @@
           <p>Understand and reply across languages directly from your wrist.</p>
         </article>
 
-        <!-- Recharge sans fil -->
+        <!-- Wireless Power Charging -->
         <article class="card" role="listitem" aria-label="Wireless Power Charging">
           <div class="icon" aria-hidden="true">
-            <!-- éclair + ondes -->
             <svg viewBox="0 0 24 24">
               <path fill="#fff" d="M13 2 6 13h4l-1 9 7-11h-4l1-9z"/>
-              <path fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity=".85"
+              <path fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity=".9"
                     d="M3.5 12A8.5 8.5 0 0 0 12 20.5M20.5 12A8.5 8.5 0 0 0 12 3.5"/>
             </svg>
           </div>
@@ -52,10 +50,9 @@
           <p>Motion-powered energy with Qi output for quick phone top-ups.</p>
         </article>
 
-        <!-- Santé / Fitness -->
-        <article class="card" role="listitem" aria-label="Health & Fitness Monitoring">
+        <!-- Health & Wellness -->
+        <article class="card" role="listitem" aria-label="Health & Wellness">
           <div class="icon" aria-hidden="true">
-            <!-- coeur -->
             <svg viewBox="0 0 24 24">
               <path fill="#fff" d="M12 21s-6.7-4.3-8.6-8.1C2 9.7 3.8 7 6.6 7c1.7 0 2.9.9 3.4 2 .5-1.1 1.7-2 3.4-2 2.8 0 4.6 2.7 3.2 5.9C18.7 16.7 12 21 12 21z"/>
             </svg>
@@ -64,10 +61,9 @@
           <p>Track heart rate, sleep and activity with clear, privacy-first metrics.</p>
         </article>
 
-        <!-- Notifications intelligentes -->
+        <!-- Smart Notifications -->
         <article class="card" role="listitem" aria-label="Smart Notifications">
           <div class="icon" aria-hidden="true">
-            <!-- cloche/étoile simple -->
             <svg viewBox="0 0 24 24">
               <path fill="#fff" d="M12 2l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17l-5.9 3 1.2-6.5L2.5 8.9 9 8l3-6z"/>
             </svg>
@@ -78,8 +74,60 @@
       </div>
     </section>
 
-    <!-- ===================== PRODUCT VIEWER (CAROUSEL) ===================== -->
+    <!-- ===================== PRODUCT VIEWER (carousel at bottom) ===================== -->
     <section class="section viewer-wrap" aria-label="Product gallery">
+      <!-- arrows ONLY for bottom carousel -->
       <button class="arrow arrow-left" aria-label="Previous product" data-dir="prev">‹</button>
 
-      <div class="viewer" aria-live="pol
+      <div class="viewer" aria-live="polite">
+        <figure class="photo-frame" id="photo-frame">
+          <div class="placeholder">product photo</div>
+          <img id="product-image" src="" alt="Product photo" />
+        </figure>
+
+        <h2 id="product-name" class="product-name">KineticPulse Pro</h2>
+        <p id="product-desc" class="product-desc">
+          Advanced sensors, live translation and long battery life.
+        </p>
+
+        <a class="btn" href="pricing.html">Try the Band</a>
+      </div>
+
+      <button class="arrow arrow-right" aria-label="Next product" data-dir="next">›</button>
+    </section>
+
+    <!-- Optional CTA -->
+    <section class="section cta" aria-label="Call to action">
+      <h2 class="cta-title">Try the Band</h2>
+      <p class="cta-sub">Experience translation, charging and health in one wearable.</p>
+      <a class="btn btn-ghost" href="pricing.html">Get Started</a>
+    </section>
+  </main>
+
+  <!-- ============== DATA SOURCE FOR THE CAROUSEL (names mapped as requested) ============== -->
+  <ul id="product-data" hidden>
+    <!-- Pro (keep) -->
+    <li
+      data-image="assets/watch-pro.png"
+      data-name="KineticPulse Pro"
+      data-desc="Advanced sensors, live translation and long battery life.">
+    </li>
+
+    <!-- watch-k.png -> Meche -->
+    <li
+      data-image="assets/watch-k.png"
+      data-name="KineticPulse Meche"
+      data-desc="Sporty design, motion power and essential translation.">
+    </li>
+
+    <!-- watch-cr.png -> X -->
+    <li
+      data-image="assets/watch-cr.png"
+      data-name="KineticPulse X"
+      data-desc="Rounded glass, premium feel and quick wireless charging.">
+    </li>
+  </ul>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
